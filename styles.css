@@ -235,14 +235,24 @@ p {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-top: 80px;
-    /* Offset for fixed header */
+    padding-top: 120px;
+    /* More padding for header */
+    padding-bottom: 80px;
+    gap: 60px;
+    /* Space between Intro and Expertise */
 }
+
+.hero-expertise {
+    width: 100%;
+}
+
 
 .hero-content {
     display: flex;
@@ -690,12 +700,18 @@ p {
     height: 180px;
     width: 100%;
     overflow: hidden;
+    background-color: #000;
+    /* Dark background for letterboxed images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .award-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    /* Show full image */
     transition: var(--transition);
 }
 
