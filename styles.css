@@ -11,7 +11,8 @@
     --text-color: #e0e6ed;
     --text-muted: #94a3b8;
     --nav-bg: rgba(11, 13, 23, 0.95);
-    --transition: all 0.3s ease;
+    /* Dampened, smooth transition */
+    --transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     --font-main: 'Inter', sans-serif;
     --section-spacing: 100px;
 }
@@ -33,6 +34,26 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* Neon Bottom Ray */
+body::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    box-shadow:
+        0 0 10px var(--primary-color),
+        0 0 20px var(--primary-color),
+        0 0 40px var(--secondary-color),
+        0 0 80px var(--secondary-color);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.9;
 }
 
 a {
@@ -280,6 +301,41 @@ p {
     margin-bottom: 0.5rem;
     color: #ffffff;
     line-height: 1.1;
+    position: relative;
+    /* Context for absolute positioning of socials */
+}
+
+/* Inline Socials next to Name */
+.hero-socials-inline {
+    display: inline-flex;
+    gap: 15px;
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    /* Align with bottom of name text */
+    font-size: 2rem;
+}
+
+.hero-socials-inline a {
+    color: var(--text-color);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.hero-socials-inline a:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Specific Colors */
+.hero-socials-inline a .fa-github {
+    color: #fff;
+    /* GitHub White */
+}
+
+.hero-socials-inline a .fa-linkedin-in {
+    color: #0A66C2;
+    /* LinkedIn Blue */
 }
 
 .surname {
@@ -456,7 +512,7 @@ p {
     width: 0;
     flex: 0 0 0;
     opacity: 0;
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
     /* Smooth eased transition */
     overflow: hidden;
     position: relative;
@@ -495,7 +551,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: all 0.5s ease;
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
     z-index: 1;
 }
 
@@ -1177,10 +1233,11 @@ footer {
 .affil-link {
     display: block;
     transition: var(--transition);
-    background: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    height: 40px;
+    /* Removed white background matching user request for transparent PNGs */
+    background: transparent;
+    padding: 0;
+    height: 50px;
+    /* Slightly larger to accommodate raw logos */
     width: auto;
     display: flex;
     align-items: center;
@@ -1188,15 +1245,18 @@ footer {
 }
 
 .affil-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px) scale(1.1);
+    /* Removed box-shadow since there's no box */
 }
 
 .affil-logo {
-    height: 30px;
+    height: 100%;
+    /* Fill the container height */
     width: auto;
     object-fit: contain;
     display: block;
+    /* Optional: Invert color if logos are black text on dark background */
+    /* filter: brightness(0) invert(1); */
 }
 
 /* Footer Responsive */
