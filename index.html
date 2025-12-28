@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="gallery_data.js"></script> <!-- Load gallery data first -->
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -24,6 +25,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Achievements</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#" class="btn-cv-header">Download CV</a></li>
@@ -65,7 +67,6 @@
 
             <!-- Moved Expertise & Interests Section -->
             <div class="container hero-expertise">
-                <h2 class="section-title"> Expertise & Interests</h2>
                 <div class="about-grid">
                     <!-- 1. Electronics -->
                     <div class="about-card">
@@ -394,101 +395,230 @@
             </div>
         </section>
 
-        <!-- Volunteering Section -->
+        <!-- Volunteering Experience Section -->
         <section id="volunteering" class="section">
             <div class="container">
-                <h2 class="section-title">Volunteering</h2>
-                <div class="volunteering-grid">
-                    <div class="vol-card">
-                        <h3>IEEE EMBS Student Branch Chapter</h3>
-                        <p class="role">Chairperson (2025-2026)</p>
-                        <p class="role">Vice Chairperson (2024-2025)</p>
-                        <p>Event Co-Chair for Brainstorm 2024, a premier healthcare innovation challenge in Sri Lanka.
-                        </p>
-                        <span class="org">University of Moratuwa</span>
+                <h2 class="section-title">Volunteering Experience</h2>
+
+                <!-- Logo Strip -->
+                <div class="vol-logos">
+                    <img src="media/IEEE_logo.png" alt="IEEE Logo">
+                    <img src="media/EMBS_UoM.webp" alt="EMBS UoM Logo">
+                    <img src="media/CASS LOGO UOM.png" alt="CASS UoM Logo">
+                    <img src="media/eclub.jpeg" alt="Electronic Club Logo">
+                    <img src="media/mora-maths.png" alt="Maths Society Logo" class="logo-maths">
+                </div>
+
+                <!-- Major Roles Grid (2 Columns) -->
+                <div class="vol-major-grid">
+                    <!-- 1. EMBS Chairperson -->
+                    <div class="vol-card-major">
+                        <div class="vol-img-container">
+                            <img src="media/vol_embs_chair.jpeg" alt="embs chair">
+                        </div>
+                        <div class="vol-content">
+                            <h3 class="role">Chairperson (2025–2026)</h3>
+                            <span class="org">IEEE EMBS Student Branch Chapter - UoM</span>
+                            <p class="date">Oct 2024 – Present</p>
+                            <ul class="extra-list-major">
+                                <li>Vice Chairperson (2024–2025).</li>
+                                <li><strong>Event Co-Chair – Brainstorm 2024:</strong> Organized Sri Lanka’s specialized
+                                    healthcare innovation challenge.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="vol-card">
-                        <h3>IEEE CASS Student Branch Chapter</h3>
-                        <p class="role">Treasurer (2025-2026)</p>
-                        <span class="org">University of Moratuwa</span>
+
+                    <!-- 2. CASS Treasurer -->
+                    <div class="vol-card-major">
+                        <div class="vol-img-container">
+                            <img src="media/vol_cass.png" alt="cass treasurer">
+                        </div>
+                        <div class="vol-content">
+                            <h3 class="role">Treasurer (2025–2026)</h3>
+                            <span class="org">IEEE CASS Student Branch Chapter - UoM</span>
+                            <p class="date">Dec 2025 – Present</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. EMBS Speaker/Presenter -->
+                    <div class="vol-card-major">
+                        <div class="vol-img-container">
+                            <img src="media/vol_speaker.png" alt="speaker">
+                        </div>
+                        <div class="vol-content">
+                            <h3 class="role">Invited Speaker & Presenter</h3>
+                            <span class="org">IEEE EMBS Student Branch Chapter</span>
+                            <ul class="extra-list-major">
+                                <li><strong>Research Day 2025:</strong> Delivered a talk on Medical Tech Collaboration.
+                                </li>
+                                <li><strong>Workshop Presenter:</strong> "Advanced Biomedical Electronics".</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4. Electronic Club Workshop Presenter -->
+                    <div class="vol-card-major">
+                        <div class="vol-img-container">
+                            <img src="media/maths.jpeg" alt="eclub workshop">
+                        </div>
+                        <div class="vol-content">
+                            <h3 class="role">Workshop Presenter & Member</h3>
+                            <span class="org">Electronic Club, University of Moratuwa</span>
+                            <p class="date">2023 - Present</p>
+                            <ul class="extra-list-major">
+                                <li><strong>SLRC:</strong> Workshops on robotics/electronics.</li>
+                                <li>Participated in Abhina 2023 & 2025.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minor Roles List -->
+                <div class="vol-minor-list">
+                    <!-- Mathematical Society -->
+                    <div class="award-row">
+                        <div class="award-icon"><i class="fas fa-calculator"></i></div>
+                        <div class="award-details">
+                            <h3>Mathematical Society - UoM</h3>
+                            <span class="award-meta">Organizing Committee (Enigma 2024) & Resource Person
+                                (MTutor)</span>
+                        </div>
+                    </div>
+
+                    <!-- School Prefect -->
+                    <div class="award-row">
+                        <div class="award-icon"><i class="fas fa-user-tie"></i></div>
+                        <div class="award-details">
+                            <h3>Senior Prefect</h3>
+                            <span class="award-meta">Government Science College, Matale (2018 – 2020)</span>
+                        </div>
+                    </div>
+
+                    <!-- Chess Captain -->
+                    <div class="award-row">
+                        <div class="award-icon"><i class="fas fa-chess-king"></i></div>
+                        <div class="award-details">
+                            <h3>School Chess Team Captain</h3>
+                            <span class="award-meta">Sri Chandananda Buddhist College, Kandy (2012)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
+        </section>
+
+        <!-- Gallery Preview Section -->
+        <section id="gallery-preview" class="section">
             <div class="container">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-wrapper">
-                    <div class="skill-category">
-                        <h3>Hardware Design (Advanced)</h3>
-                        <div class="skill-tags">
-                            <span>Altium Designer</span>
-                            <span>LTspice</span>
-                            <span>ngspice</span>
-                            <span>PSIM</span>
-                            <span>Intel Quartus Prime</span>
-                            <span>SolidWorks</span>
+                <a href="gallery.html" class="gallery-preview-box">
+                    <!-- Background Collage (Populated by JS) -->
+                    <div class="gallery-bg-collage" id="gallery-bg-collage">
+                        <!-- JS will insert img tags here -->
+                    </div>
+
+                    <div class="gallery-overlay">
+                        <h2>Life Outside Engineering</h2>
+                        <span class="btn primary">See Gallery</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-grid">
+                    <!-- Left Side: Contact Info -->
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p class="contact-desc">Feel free to reach out for collaborations or just a friendly chat.</p>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:sajithamadugalle@gmail.com"
+                                    class="contact-val">sajithamadugalle@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-val">+94 76 986 7887</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links-contact">
+                            <a href="https://www.linkedin.com/in/sajitha-madugalle/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Sajitha-Madugalle" target="_blank"><i
+                                    class="fab fa-github"></i></a>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h3>Programming (Proficient)</h3>
-                        <div class="skill-tags">
-                            <span>Python</span>
-                            <span>Verilog</span>
-                            <span>SPICE</span>
-                            <span>MATLAB</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>VLSI/ASIC (Intermediate)</h3>
-                        <div class="skill-tags">
-                            <span>xschem</span>
-                            <span>Magic VLSI</span>
-                            <span>Verilog HDL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools & Frameworks</h3>
-                        <div class="skill-tags">
-                            <span>TensorFlow</span>
-                            <span>OpenCV</span>
-                            <span>Git/GitHub</span>
-                            <span>LaTeX</span>
-                        </div>
+
+                    <!-- Right Side: Email Form Option -->
+                    <div class="contact-form-container">
+                        <form class="contact-form" action="mailto:sajithamadugalle@gmail.com" method="post"
+                            enctype="text/plain">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Your Message"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary full-width">Send Message</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Extra Curricular -->
-        <section id="extra" class="section alt-bg">
+        <!-- Footer -->
+        <!-- Footer -->
+        <footer class="footer">
             <div class="container">
-                <h2 class="section-title">Extra-Curricular Activities</h2>
-                <ul class="extra-list">
-                    <li><strong>IEEE EMBS:</strong> Invited Speaker at Research Day 2025 (Faculty of Medicine) and
-                        Workshop Presenter on advanced biomedical electronics.</li>
-                    <li><strong>Mathematical Society:</strong> Academic Pillar Organizing Committee Member for Enigma
-                        2024 and Resource Person for MTutor outreach program.</li>
-                    <li><strong>Electronic Club:</strong> Workshop Presenter for the Sri Lanka Robotics Challenge (SLRC)
-                        and participant in Abhina 2023/2025.</li>
-                    <li><strong>Leadership:</strong> Senior Prefect at Government Science College, Matale (2018-2020)
-                        and School Chess Team Captain at Sri Chandananda Buddhist College (2012).</li>
-                    <li><strong>Chess:</strong> Gold Medalist at the Kandy District Youth Chess Championship U14 (2014)
-                        and School Colours recipient (2012).</li>
-                </ul>
-            </div>
-        </section>
+                <div class="footer-content-row">
+                    <!-- Left: Socials & Copyright -->
+                    <div class="footer-left">
+                        <div class="footer-socials">
+                            <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank" aria-label="Blog"><i class="fas fa-blog"></i></a>
+                        </div>
+                        <p class="copyright">&copy; 2025 Sajitha. All Rights Reserved.</p>
+                    </div>
 
-        <footer id="contact">
-            <div class="container footer-content">
-                <div class="footer-logo">Sajitha<span>.</span></div>
-                <p>&copy; 2025 Sajitha. All Rights Reserved.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <!-- Right: Affiliations -->
+                    <div class="footer-right">
+                        <h3>Affiliations</h3>
+                        <div class="affiliations">
+                            <!-- UoM Logo Placeholder -->
+                            <a href="https://uom.lk/" target="_blank" class="affil-link" title="University of Moratuwa">
+                                <img src="media/uom_logo_placeholder.png" alt="UoM" class="affil-logo"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/50x50?text=UoM';">
+                            </a>
+                            <!-- ENTC Logo Placeholder -->
+                            <a href="https://ent.mrt.ac.lk/" target="_blank" class="affil-link" title="ENTC">
+                                <img src="media/entc_logo_placeholder.png" alt="ENTC" class="affil-logo"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/50x50?text=ENTC';">
+                            </a>
+                            <!-- SkillSurf Logo -->
+                            <a href="https://skillsurf.lk/" target="_blank" class="affil-link" title="SkillSurf">
+                                <img src="media/skillsurf.jpeg" alt="SkillSurf" class="affil-logo">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>

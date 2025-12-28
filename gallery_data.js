@@ -1,0 +1,20 @@
+const GALLERY_IMAGES = [
+    "CMOS_inv.png",
+    "aura.jpeg",
+    "award_circuit_challenge.jpeg",
+    "award_silicon_pulse.jpeg",
+    "brainstorm23.jpeg",
+    "carierfair.jpeg",
+    "ecg.png",
+    "embsvolunteering.jpeg",
+    "emg_flappy.png",
+    "maths.jpeg",
+    "sajitha_DP.jpg",
+    "sar_adc.png",
+    "skillsurf.jpeg",
+    "spi_master.png",
+    "stear_safe.png",
+    "usyd.png",
+    "vib_analys.png",
+    "vol_embs_chair.jpeg"
+];

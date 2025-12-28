@@ -37,6 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
+    // Gallery Preview Logic (Home Page)
+    const collageContainer = document.getElementById('gallery-bg-collage');
+
+    // Only run if the element exists (i.e. on home page) and data is loaded
+    if (collageContainer && typeof GALLERY_IMAGES !== 'undefined' && GALLERY_IMAGES.length > 0) {
+
+        // Pick up to 10 random images or first 10
+        const previewImages = GALLERY_IMAGES.slice(0, 10);
+
+        previewImages.forEach(imgName => {
+            const img = document.createElement('img');
+            img.src = `gallery/${imgName}`;
+            img.className = 'gallery-bg-img';
+            img.alt = 'Gallery Preview';
+            collageContainer.appendChild(img);
+        });
+    }
+
     // Sticky Header visual effect
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
