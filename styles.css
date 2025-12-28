@@ -373,7 +373,7 @@ p {
 .about-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(76, 201, 240, 0.3);
 }
 
 .icon {
@@ -438,7 +438,7 @@ p {
 .exp-card:hover {
     transform: translateX(5px);
     border-color: var(--primary-color);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(76, 201, 240, 0.3);
 }
 
 .exp-bg-image {
@@ -541,7 +541,8 @@ p {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 30px rgba(76, 201, 240, 0.3);
 }
 
 .project-image {
@@ -657,6 +658,52 @@ p {
     position: absolute;
     left: 0;
     color: var(--primary-color);
+}
+
+/* Honors and Awards */
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.award-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.award-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(76, 201, 240, 0.3);
+}
+
+.award-card h3 {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.award-event {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+}
+
+.award-result {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: rgba(67, 97, 238, 0.15);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(67, 97, 238, 0.3);
 }
 
 /* Footer */
