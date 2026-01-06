@@ -174,24 +174,27 @@ p {
 
 /* Header & Nav */
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     background-color: var(--nav-bg);
     backdrop-filter: blur(10px);
-    padding: 15px 0;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
+    max-width: 1200px;
+    /* Match .container */
+    margin: 0 auto;
+    padding: 0 20px;
+    /* Match .container padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .logo {
@@ -208,6 +211,8 @@ p {
 .nav-links {
     display: flex;
     gap: 30px;
+    margin-right: 0;
+    /* Resetting to 0 as requested */
 }
 
 .nav-links li a {
@@ -263,8 +268,8 @@ p {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-top: 120px;
-    /* More padding for header */
+    padding-top: 40px;
+    /* Reduced padding since header is now sticky/in-flow */
     padding-bottom: 80px;
     gap: 60px;
     /* Space between Intro and Expertise */
@@ -286,7 +291,7 @@ p {
 
 .hero-text {
     flex: 1;
-    max-width: 600px;
+    max-width: 750px;
 }
 
 .greeting {
@@ -298,9 +303,9 @@ p {
 
 .hero-name {
     font-size: 4.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     color: #ffffff;
-    line-height: 1.1;
+    line-height: 0.8;
     position: relative;
     /* Context for absolute positioning of socials */
 }
@@ -309,11 +314,9 @@ p {
 .hero-socials-inline {
     display: inline-flex;
     gap: 15px;
-    position: absolute;
-    right: 0;
-    bottom: 8px;
-    /* Align with bottom of name text */
+    margin-left: 230px;
     font-size: 2rem;
+    vertical-align: middle;
 }
 
 .hero-socials-inline a {
@@ -343,9 +346,9 @@ p {
     font-size: 3rem;
     /* Smaller font for surname as requested */
     font-weight: 600;
-    display: block;
-    /* Ensures it starts on a new line or respects spacing */
-    margin-top: -10px;
+    display: inline-block;
+    /* Allows socials to sit next to it */
+    margin-top: -50px;
     /* Slight adjustment to bring it closer if line-height is large */
 }
 
@@ -360,7 +363,7 @@ p {
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -1331,8 +1334,8 @@ footer {
 
 @media (max-width: 768px) {
     .nav-links {
+
         display: none;
-        /* Add JS hamburger menu later if needed */
     }
 
     .section-title {
