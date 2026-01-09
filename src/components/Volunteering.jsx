@@ -19,7 +19,7 @@ function Volunteering() {
             ]
         },
         {
-            image: '/media/vol_cass.png',
+            image: '/media/vol_cass.jpeg',
             role: 'IEEE CASS Student Branch Chapter - UoM',
             date: 'Dec 2025 – Present',
             items: [
