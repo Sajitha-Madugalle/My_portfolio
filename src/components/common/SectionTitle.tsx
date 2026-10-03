@@ -8,7 +8,7 @@ export default function SectionTitle({
   subtitle,
 }: SectionTitleProps) {
   return (
-    <header className="section-title">
+    <header className="section-title reveal reveal-up">
       <div>
         <h2>{title}</h2>
         {subtitle && <p>{subtitle}</p>}

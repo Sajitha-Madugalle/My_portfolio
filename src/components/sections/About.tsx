@@ -2,17 +2,35 @@ import { Download, Mail } from "lucide-react";
 import NewsCarousel from "../common/NewsCarousel";
 
 export default function About() {
+  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      const top =
+        contactSection.getBoundingClientRect().top +
+        window.pageYOffset -
+        20;
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section id="about" className="section hero-section">
       <div id="about-profile" className="hero-profile">
-        <div className="hero-image">
-          <img
-            src="/images/profile/profile-placeholder.jpg"
-            alt="Sajitha Madugalle"
-          />
+        <div className="hero-image reveal reveal-left">
+          <div className="hero-image-frame">
+            <img
+              src="/images/profile/profile-placeholder.jpg"
+              alt="Sajitha Madugalle"
+            />
+            <div className="hero-image-glow" />
+          </div>
         </div>
 
-        <div className="hero-content">
+        <div className="hero-content reveal reveal-up stagger-1">
           <span className="eyebrow">HELLO, I'M</span>
 
           <h1>Sajitha Madugalle</h1>
@@ -53,9 +71,13 @@ export default function About() {
           </div>
 
           <div className="hero-actions">
-            <a href="#contact" className="button button-primary">
-              <Mail size={17} />
-              Get in Touch
+            <a
+              href="#contact"
+              onClick={scrollToContact}
+              className="button button-primary"
+            >
+              <Mail size={17} className="btn-icon" />
+              <span>Get in Touch</span>
             </a>
 
             <a
@@ -64,8 +86,8 @@ export default function About() {
               target="_blank"
               rel="noreferrer"
             >
-              <Download size={17} />
-              Download CV
+              <Download size={17} className="btn-icon" />
+              <span>Download CV</span>
             </a>
           </div>
         </div>

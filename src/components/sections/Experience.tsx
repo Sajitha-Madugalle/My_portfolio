@@ -21,8 +21,11 @@ export default function Experience() {
       <SectionTitle title="Experience" />
 
       <div className="timeline">
-        {items.map((item) => (
-          <article className="timeline-item" key={`${item.year}-${item.role}`}>
+        {items.map((item, index) => (
+          <article
+            className={`timeline-item reveal reveal-up stagger-${index + 1}`}
+            key={`${item.year}-${item.role}`}
+          >
             <span className="timeline-date">{item.year}</span>
 
             <div className="card">

@@ -3,7 +3,7 @@ import { Github, GraduationCap, Linkedin, Mail } from "lucide-react";
 export default function Contact() {
   return (
     <section id="contact" className="section contact-section">
-      <div>
+      <div className="reveal reveal-up">
         <span className="eyebrow">LET'S CONNECT</span>
 
         <h2>Research, engineering and collaboration.</h2>
@@ -14,29 +14,46 @@ export default function Contact() {
         </p>
       </div>
 
-      <div className="contact-links">
-        <a href="mailto:your@email.com">
-          <Mail size={18} />
-          Email
+      <div className="contact-links reveal reveal-up stagger-1">
+        <a href="mailto:your@email.com" className="contact-card">
+          <Mail size={18} className="contact-icon" />
+          <span>Email</span>
         </a>
 
-        <a href="#" target="_blank" rel="noreferrer">
-          <Linkedin size={18} />
-          LinkedIn
+        <a
+          href="#"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-card"
+        >
+          <Linkedin size={18} className="contact-icon" />
+          <span>LinkedIn</span>
         </a>
 
-        <a href="#" target="_blank" rel="noreferrer">
-          <Github size={18} />
-          GitHub
+        <a
+          href="#"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-card"
+        >
+          <Github size={18} className="contact-icon" />
+          <span>GitHub</span>
         </a>
 
-        <a href="#" target="_blank" rel="noreferrer">
-          <GraduationCap size={18} />
-          Google Scholar
+        <a
+          href="#"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-card"
+        >
+          <GraduationCap size={18} className="contact-icon" />
+          <span>Google Scholar</span>
         </a>
       </div>
 
-      <footer>© {new Date().getFullYear()} Sajitha Madugalle</footer>
+      <footer className="reveal reveal-up stagger-2">
+        © {new Date().getFullYear()} Sajitha Madugalle · Designed with precision.
+      </footer>
     </section>
   );
 }

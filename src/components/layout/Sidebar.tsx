@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Github, Linkedin, Mail } from "lucide-react";
+import { ChevronLeft, Github, Linkedin, Mail } from "lucide-react";
 import { navigationItems } from "../../data/navigation";
 
 interface SidebarProps {
@@ -15,20 +15,33 @@ export default function Sidebar({
   activeSection,
 }: SidebarProps) {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -25;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
-    <aside className={`sidebar ${open ? "open" : "collapsed"}`}>
+    <aside
+      className={`sidebar ${open ? "open" : "collapsed"}`}
+      aria-label="Sidebar navigation"
+    >
       <button
         className="sidebar-toggle"
         onClick={onToggle}
-        aria-label="Toggle navigation"
+        aria-label={open ? "Collapse navigation" : "Expand navigation"}
+        title={open ? "Collapse navigation" : "Expand navigation"}
       >
-        {open ? <ChevronLeft size={17} /> : <ChevronRight size={17} />}
+        <ChevronLeft
+          size={17}
+          className={`sidebar-toggle-icon ${open ? "" : "rotated"}`}
+        />
       </button>
 
       <button
@@ -36,56 +49,61 @@ export default function Sidebar({
         onClick={() => scrollToSection("about")}
         aria-label="Back to top"
       >
-        SM
+        <span>SM</span>
       </button>
 
-      {open && (
-        <>
-          <nav className="sidebar-nav" aria-label="Main navigation">
-            {navigationItems.map(({ id, label, icon: Icon }) => (
-              <button
-                key={id}
-                className={activeSection === id ? "active" : ""}
-                onClick={() => scrollToSection(id)}
-              >
+      <nav className="sidebar-nav" aria-label="Main navigation">
+        {navigationItems.map(({ id, label, icon: Icon }) => {
+          const isActive = activeSection === id;
+          return (
+            <button
+              key={id}
+              className={`sidebar-nav-item ${isActive ? "active" : ""}`}
+              onClick={() => scrollToSection(id)}
+              title={label}
+            >
+              <span className="sidebar-nav-icon">
                 <Icon size={18} />
-                <span>{label}</span>
-              </button>
-            ))}
-          </nav>
+              </span>
+              <span className="sidebar-nav-label">{label}</span>
+              {isActive && <span className="sidebar-active-indicator" />}
+            </button>
+          );
+        })}
+      </nav>
 
-          <div
-            className={`sidebar-profile ${
-              showDockedProfile ? "visible" : ""
-            }`}
-          >
-            <img
-              src="/images/profile/profile-placeholder.jpg"
-              alt="Sajitha Madugalle"
-            />
+      <div
+        className={`sidebar-profile ${
+          open && showDockedProfile ? "visible" : ""
+        }`}
+      >
+        <img
+          src="/images/profile/profile-placeholder.jpg"
+          alt="Sajitha Madugalle"
+          className="sidebar-profile-avatar"
+        />
 
-            <h3>Sajitha Madugalle</h3>
+        <div className="sidebar-profile-info">
+          <h3>Sajitha Madugalle</h3>
+          <p>
+            Biomedical Engineering
+            <br />
+            Bioelectronics · Wearable Biosensing
+          </p>
+        </div>
 
-            <p>
-              Biomedical Engineering
-              <br />
-              Bioelectronics · Wearable Biosensing
-            </p>
-
-            <div className="sidebar-socials">
-              <a href="#" aria-label="LinkedIn">
-                <Linkedin size={17} />
-              </a>
-              <a href="#" aria-label="GitHub">
-                <Github size={17} />
-              </a>
-              <a href="mailto:your@email.com" aria-label="Email">
-                <Mail size={17} />
-              </a>
-            </div>
-          </div>
-        </>
-      )}
+        <div className="sidebar-socials">
+          <a href="#" aria-label="LinkedIn" title="LinkedIn">
+            <Linkedin size={16} />
+          </a>
+          <a href="#" aria-label="GitHub" title="GitHub">
+            <Github size={16} />
+          </a>
+          <a href="mailto:your@email.com" aria-label="Email" title="Email">
+            <Mail size={16} />
+          </a>
+        </div>
+      </div>
     </aside>
   );
 }

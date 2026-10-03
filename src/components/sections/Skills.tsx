@@ -21,8 +21,11 @@ export default function Skills() {
       <SectionTitle title="Skills" />
 
       <div className="skill-list">
-        {skills.map((skill) => (
-          <span className="skill-badge" key={skill}>
+        {skills.map((skill, index) => (
+          <span
+            className={`skill-badge reveal reveal-scale stagger-${(index % 6) + 1}`}
+            key={skill}
+          >
             {skill}
           </span>
         ))}

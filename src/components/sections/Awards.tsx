@@ -21,8 +21,11 @@ export default function Awards() {
       <SectionTitle title="Awards & Recognition" />
 
       <div className="award-grid">
-        {awards.map((award) => (
-          <article className="card" key={award.title}>
+        {awards.map((award, index) => (
+          <article
+            className={`card reveal reveal-up stagger-${index + 1}`}
+            key={award.title}
+          >
             <h3>{award.title}</h3>
             <p className="muted">{award.subtitle}</p>
           </article>

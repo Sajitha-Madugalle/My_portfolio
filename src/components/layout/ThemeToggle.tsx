@@ -7,6 +7,7 @@ export default function ThemeToggle() {
     if (saved) return saved === "dark";
     return window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
   });
+  const [isRotating, setIsRotating] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -16,14 +17,26 @@ export default function ThemeToggle() {
     localStorage.setItem("portfolio-theme", dark ? "dark" : "light");
   }, [dark]);
 
+  const toggleTheme = () => {
+    setIsRotating(true);
+    setDark((value) => !value);
+    setTimeout(() => setIsRotating(false), 450);
+  };
+
   return (
     <button
-      className="theme-toggle"
-      onClick={() => setDark((value) => !value)}
-      aria-label="Toggle theme"
-      title="Toggle theme"
+      className={`theme-toggle ${isRotating ? "rotating" : ""}`}
+      onClick={toggleTheme}
+      aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
+      title={dark ? "Switch to light theme" : "Switch to dark theme"}
     >
-      {dark ? <Sun size={18} /> : <Moon size={18} />}
+      <span className="theme-toggle-inner">
+        {dark ? (
+          <Sun size={18} className="theme-icon sun" />
+        ) : (
+          <Moon size={18} className="theme-icon moon" />
+        )}
+      </span>
     </button>
   );
 }

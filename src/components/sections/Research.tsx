@@ -11,8 +11,8 @@ export default function Research() {
       />
 
       <div className="project-grid">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+        {projects.map((project, index) => (
+          <ProjectCard key={project.title} {...project} index={index} />
         ))}
       </div>
     </section>

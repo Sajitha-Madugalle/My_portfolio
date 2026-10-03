@@ -3,6 +3,7 @@ interface ProjectCardProps {
   image: string;
   description: string;
   points: string[];
+  index?: number;
 }
 
 export default function ProjectCard({
@@ -10,10 +11,15 @@ export default function ProjectCard({
   image,
   description,
   points,
+  index = 0,
 }: ProjectCardProps) {
   return (
-    <article className="project-card card">
-      <img src={image} alt="" />
+    <article
+      className={`project-card card reveal reveal-up stagger-${(index % 3) + 1}`}
+    >
+      <div className="project-card-image-wrap">
+        <img src={image} alt={title} loading="lazy" />
+      </div>
 
       <div className="project-content">
         <h3>{title}</h3>

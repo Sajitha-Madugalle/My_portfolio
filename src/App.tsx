@@ -3,6 +3,8 @@ import { useState } from "react";
 import Sidebar from "./components/layout/Sidebar";
 import ThemeToggle from "./components/layout/ThemeToggle";
 import BackgroundDecor from "./components/layout/BackgroundDecor";
+import ScrollProgress from "./components/layout/ScrollProgress";
+import BackToTop from "./components/common/BackToTop";
 
 import About from "./components/sections/About";
 import Education from "./components/sections/Education";
@@ -16,6 +18,7 @@ import Contact from "./components/sections/Contact";
 
 import useScrollProfile from "./hooks/useScrollProfile";
 import useActiveSection from "./hooks/useActiveSection";
+import useScrollReveal from "./hooks/useScrollReveal";
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -31,8 +34,12 @@ export default function App() {
     "life",
   ]);
 
+  // Activate scroll-triggered reveal animations
+  useScrollReveal();
+
   return (
     <div className="app">
+      <ScrollProgress />
       <BackgroundDecor />
 
       <Sidebar
@@ -59,6 +66,8 @@ export default function App() {
         <LifeOutsideLab />
         <Contact />
       </main>
+
+      <BackToTop />
     </div>
   );
 }

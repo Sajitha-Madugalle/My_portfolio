@@ -10,9 +10,14 @@ export default function LifeOutsideLab() {
       />
 
       <div className="life-grid">
-        {lifeItems.map((item) => (
-          <article className="life-card" key={item.title}>
-            <img src={item.image} alt="" />
+        {lifeItems.map((item, index) => (
+          <article
+            className={`life-card reveal reveal-up stagger-${(index % 4) + 1}`}
+            key={item.title}
+          >
+            <div className="life-card-image-wrap">
+              <img src={item.image} alt={item.title} loading="lazy" />
+            </div>
 
             <div>
               <h3>{item.title}</h3>
