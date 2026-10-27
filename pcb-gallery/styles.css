@@ -1328,3 +1328,19 @@ body {
   height: 100%;
   object-fit: contain;
 }
+
+.gallery-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.gallery-title-row .theme-toggle-btn {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
+}
+.gallery-title-row .theme-icon { display: flex; }
+.gallery-footer { justify-content: center; gap: 1.5rem; }

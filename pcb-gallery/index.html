@@ -25,26 +25,6 @@
     <div class="gallery-layout">
       <!-- LEFT SIDEBAR: Project Navigation -->
       <aside class="gallery-sidebar" id="gallery-sidebar">
-        <!-- Theme toggle -->
-        <div class="sidebar-theme">
-          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-            <span class="theme-icon light-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-            </span>
-            <span class="theme-text">Toggle Theme</span>
-          </button>
-        </div>
-
         <!-- Filter Tags -->
         <div class="filter-pills" id="filter-pills">
           <button class="pill active" data-filter="all">All (5)</button>
@@ -90,7 +70,24 @@
       <main class="gallery-main" id="gallery-main">
         <!-- Top Banner / Header -->
         <header class="gallery-hero">
-          <h1 class="gallery-heading">PCB Design Gallery</h1>
+          <div class="gallery-title-row">
+            <h1 class="gallery-heading">PCB Design Gallery</h1>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+            <span class="theme-icon light-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+          </button>
+          </div>
           <!-- Quick instructions / hints -->
           <div class="gallery-toolbar">
             <div class="gallery-count" id="gallery-count">Showing 5 PCB designs</div>
@@ -118,14 +115,8 @@
 
         <!-- Footer -->
         <footer class="gallery-footer">
-          <div class="footer-left">
-            <span>© 2026 Sajitha Madugalle • PCB Design Showcase</span>
-          </div>
-          <div class="footer-right">
-            <a href="../#contact" class="footer-link">Get in Touch</a>
-            <span class="sep">•</span>
-            <a href="https://github.com/orgs/PulseX-Solutions/repositories" target="_blank" rel="noreferrer" class="footer-link">PulseX Repositories ↗</a>
-          </div>
+          <a href="https://www.linkedin.com/in/sajitha-madugalle/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn ↗</a>
+          <a href="https://github.com/Sajitha-Madugalle" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub ↗</a>
         </footer>
       </main>
     </div>
