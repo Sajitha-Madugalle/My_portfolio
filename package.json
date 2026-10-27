@@ -1,0 +1,8 @@
+{
+  "name": "pcb-design-gallery",
+  "version": "1.0.0",
+  "description": "Interactive PCB Design Gallery showcase with responsive 3-column grid, left sidebar navigation, and detailed modal views.",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}

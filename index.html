@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PCB Design Gallery — Sajitha Madugalle. High-density, mixed-signal, wearable biosensing and electrotactile printed circuit boards."
+    />
+    <title>PCB Design Gallery | Sajitha Madugalle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Top Circuit Pattern Decor -->
+    <div class="circuit-bg-grid" aria-hidden="true"></div>
+    <div class="circuit-glow-orb circuit-glow-1" aria-hidden="true"></div>
+    <div class="circuit-glow-orb circuit-glow-2" aria-hidden="true"></div>
+
+    <div class="gallery-layout">
+      <!-- LEFT SIDEBAR: Project Navigation -->
+      <aside class="gallery-sidebar" id="gallery-sidebar">
+        <!-- Theme toggle -->
+        <div class="sidebar-theme">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            <span class="theme-icon light-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span class="theme-text">Toggle Theme</span>
+          </button>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="filter-pills" id="filter-pills">
+          <button class="pill active" data-filter="all">All (5)</button>
+          <button class="pill" data-filter="wearable">Wearables</button>
+          <button class="pill" data-filter="multilayer">6-Layer</button>
+          <button class="pill" data-filter="flex">Flex PCB</button>
+          <button class="pill" data-filter="high-voltage">High Voltage</button>
+        </div>
+
+        <!-- Projects Nav List -->
+        <nav class="project-nav-menu" id="project-nav-menu" aria-label="PCB Projects Navigation">
+          <!-- Dynamically populated via JS -->
+        </nav>
+
+        <!-- Sidebar Specs Summary Card -->
+        <div class="sidebar-stats-card">
+          <div class="stats-header">
+            <span class="mono-label">STACKUP & CAD HIGHLIGHTS</span>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">6-Layer</span>
+              <span class="stat-desc">Multilayer PCB</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">Wearable</span>
+              <span class="stat-desc">Devices</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">Flex</span>
+              <span class="stat-desc">Polyimide</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">Altium</span>
+              <span class="stat-desc">Primary EDA</span>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- MAIN CONTENT AREA -->
+      <main class="gallery-main" id="gallery-main">
+        <!-- Top Banner / Header -->
+        <header class="gallery-hero">
+          <h1 class="gallery-heading">PCB Design Gallery</h1>
+          <!-- Quick instructions / hints -->
+          <div class="gallery-toolbar">
+            <div class="gallery-count" id="gallery-count">Showing 5 PCB designs</div>
+            <div class="gallery-hint">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Click any PCB card to inspect detailed layer stackup, schematics, and design decisions</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- 3-COLUMN FULL SCREEN GRID CONTAINER -->
+        <section class="pcb-grid-section">
+          <div class="pcb-grid" id="pcb-grid">
+            <!-- Dynamically populated 3-column cards with 1:1 images and descriptions under -->
+          </div>
+          <div class="no-results" id="no-results" style="display: none;">
+            <p>No PCB designs found matching your filter.</p>
+            <button id="reset-filter-btn" class="btn-secondary">Reset Filters</button>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="gallery-footer">
+          <div class="footer-left">
+            <span>© 2026 Sajitha Madugalle • PCB Design Showcase</span>
+          </div>
+          <div class="footer-right">
+            <a href="../#contact" class="footer-link">Get in Touch</a>
+            <span class="sep">•</span>
+            <a href="https://github.com/orgs/PulseX-Solutions/repositories" target="_blank" rel="noreferrer" class="footer-link">PulseX Repositories ↗</a>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <!-- POPUP MODAL WINDOW FOR ADDITIONAL DETAILS -->
+    <div class="modal-overlay" id="pcb-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      
+      <div class="modal-container" id="modal-container">
+        <!-- Close button -->
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close details popup">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Modal Prev/Next Navigation Controls -->
+        <button class="modal-nav-btn modal-prev-btn" id="modal-prev-btn" aria-label="Previous PCB" title="Previous PCB (Left Arrow)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="modal-nav-btn modal-next-btn" id="modal-next-btn" aria-label="Next PCB" title="Next PCB (Right Arrow)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Modal Body Content -->
+        <div class="modal-content-grid" id="modal-content">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
